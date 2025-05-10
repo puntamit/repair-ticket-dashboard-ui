@@ -11,6 +11,7 @@ import Users from "./pages/Users";
 import Calendar from "./pages/Calendar";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Employee from "./pages/Employee";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,11 @@ const App = () => (
           <Route path="/settings" element={
             <DashboardLayout>
               <Settings />
+            </DashboardLayout>
+          } />
+          <Route path="/employee" element={
+            <DashboardLayout>
+              <Employee />
             </DashboardLayout>
           } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

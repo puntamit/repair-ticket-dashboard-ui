@@ -8,7 +8,8 @@ import {
   Ticket, 
   Users, 
   Settings, 
-  Calendar 
+  Calendar,
+  UserRound
 } from "lucide-react";
 
 interface SidebarProps {
@@ -34,6 +35,11 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
       title: "Users",
       icon: <Users size={20} />,
       path: "/users",
+    },
+    {
+      title: "Employee",
+      icon: <UserRound size={20} />,
+      path: "/employee",
     },
     {
       title: "Calendar",
