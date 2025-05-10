@@ -14,8 +14,8 @@ import { Search, Ticket, TicketPlus } from "lucide-react";
 
 const Tickets = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-  const [priorityFilter, setPriorityFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
+  const [priorityFilter, setPriorityFilter] = useState("all");
 
   // Mock data for tickets
   const allTickets = [
@@ -122,12 +122,12 @@ const Tickets = () => {
     }
 
     let matchesStatus = true;
-    if (statusFilter) {
+    if (statusFilter !== "all") {
       matchesStatus = ticket.status === statusFilter;
     }
 
     let matchesPriority = true;
-    if (priorityFilter) {
+    if (priorityFilter !== "all") {
       matchesPriority = ticket.priority === priorityFilter;
     }
 
@@ -166,7 +166,7 @@ const Tickets = () => {
                   <SelectValue placeholder="Status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Statuses</SelectItem>
+                  <SelectItem value="all">All Statuses</SelectItem>
                   <SelectItem value="open">Open</SelectItem>
                   <SelectItem value="in_progress">In Progress</SelectItem>
                   <SelectItem value="resolved">Resolved</SelectItem>
@@ -179,7 +179,7 @@ const Tickets = () => {
                   <SelectValue placeholder="Priority" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Priorities</SelectItem>
+                  <SelectItem value="all">All Priorities</SelectItem>
                   <SelectItem value="low">Low</SelectItem>
                   <SelectItem value="medium">Medium</SelectItem>
                   <SelectItem value="high">High</SelectItem>
