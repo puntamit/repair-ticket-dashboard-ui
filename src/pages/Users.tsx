@@ -14,8 +14,8 @@ import { Search } from "lucide-react";
 
 const Users = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [roleFilter, setRoleFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
+  const [roleFilter, setRoleFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all");
 
   // Mock data for users
   const allUsers = [
@@ -112,12 +112,12 @@ const Users = () => {
     }
 
     let matchesRole = true;
-    if (roleFilter) {
+    if (roleFilter !== "all") {
       matchesRole = user.role === roleFilter;
     }
 
     let matchesStatus = true;
-    if (statusFilter) {
+    if (statusFilter !== "all") {
       matchesStatus = user.status === statusFilter;
     }
 
@@ -149,7 +149,7 @@ const Users = () => {
                 <SelectValue placeholder="Role" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Roles</SelectItem>
+                <SelectItem value="all">All Roles</SelectItem>
                 <SelectItem value="admin">Admin</SelectItem>
                 <SelectItem value="technician">Technician</SelectItem>
                 <SelectItem value="user">User</SelectItem>
@@ -161,7 +161,7 @@ const Users = () => {
                 <SelectValue placeholder="Status" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Statuses</SelectItem>
+                <SelectItem value="all">All Statuses</SelectItem>
                 <SelectItem value="active">Active</SelectItem>
                 <SelectItem value="inactive">Inactive</SelectItem>
               </SelectContent>
