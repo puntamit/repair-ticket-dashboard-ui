@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Input } from "@/components/ui/input";
@@ -178,7 +177,7 @@ const Employee = () => {
                   <span>{employee.phone}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <BriefCase className="w-4 h-4 text-muted-foreground" />
+                  <Briefcase className="w-4 h-4 text-muted-foreground" />
                   <span>Reports to: {employee.supervisor}</span>
                 </div>
                 <div className="pt-2">
