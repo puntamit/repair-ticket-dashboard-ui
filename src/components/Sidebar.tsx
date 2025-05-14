@@ -9,7 +9,8 @@ import {
   Users, 
   Settings, 
   Calendar,
-  UserRound
+  UserRound,
+  FileText
 } from "lucide-react";
 
 interface SidebarProps {
@@ -25,6 +26,11 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
       title: "Dashboard",
       icon: <LayoutDashboard size={20} />,
       path: "/",
+    },
+    {
+      title: "แจ้งซ่อม",
+      icon: <FileText size={20} />,
+      path: "/user-tickets",
     },
     {
       title: "Tickets",

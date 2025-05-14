@@ -13,6 +13,7 @@ import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Employee from "./pages/Employee.jsx";
 import Login from "./pages/Login";
+import UserTickets from "./pages/UserTickets";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,15 @@ const App = () => {
           <Routes>
             {/* หน้าเข้าสู่ระบบ */}
             <Route path="/login" element={<Login />} />
+            
+            {/* หน้าผู้ใช้งาน */}
+            <Route path="/user-tickets" element={
+              isAuthenticated ?
+              <DashboardLayout>
+                <UserTickets />
+              </DashboardLayout> :
+              <Navigate to="/login" />
+            } />
             
             {/* หน้าหลักที่ต้องเข้าสู่ระบบ */}
             <Route path="/" element={
